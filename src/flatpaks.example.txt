@@ -1,0 +1,14 @@
+org.videolan.VLC
+org.kde.gwenview
+org.kde.kcalc
+io.github.kolunmi.Bazaar
+org.mozilla.firefox
+org.tuxpaint.Tuxpaint
+org.gtk.Gtk3theme.Breeze
+org.kde.elisa
+io.github.flattool.Warehouse
+org.kde.kpat
+uk.org.greenend.chiark.sgtatham.puzzles
+net.sourceforge.ExtremeTuxRacer
+org.kde.kapman
+io.github.trackballs.Trackballs
