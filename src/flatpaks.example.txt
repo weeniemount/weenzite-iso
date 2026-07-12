@@ -10,3 +10,16 @@ com.github.Matoking.protontricks
 org.virt_manager.virt-manager
 org.videolan.VLC
 io.github.flattool.Warehouse
+org.kde.kpat
+org.kde.kmines
+org.kde.kmahjongg
+com.google.Chrome
+com.google.EarthPro
+com.google.ChromeDev
+org.supertuxproject.SuperTux
+io.github.nozwock.Packet
+org.frozen_bubble.frozen-bubble
+uk.org.greenend.chiark.sgtatham.puzzles
+com.obsproject.Studio
+com.github.huluti.Coulr
+dev.project516.titledgames.microwave-man
