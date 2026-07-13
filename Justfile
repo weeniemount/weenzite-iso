@@ -212,7 +212,6 @@ rootfs-install-livesys-scripts livesys="1":
 
     # deskslop
     desktop_env=kde
-    esac && unset -v _session_file
     sed -i "s/^livesys_session=.*/livesys_session=${desktop_env}/" /etc/sysconfig/livesys
 
     # Enable services
