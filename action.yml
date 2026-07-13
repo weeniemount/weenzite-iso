@@ -58,6 +58,8 @@ runs:
     - name: Install Just
       id: install-just
       uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3
+      with:
+        just-version: '<1.53.0'
 
     - name: Generate iso
       id: generate-iso
