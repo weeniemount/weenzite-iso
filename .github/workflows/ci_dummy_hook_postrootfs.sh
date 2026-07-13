@@ -14,6 +14,8 @@ if [[ "$ID_LIKE" =~ rhel ]]; then
     dnf copr enable -y jreilly1821/anaconda-webui
     dnf install -y anaconda-webui anaconda
     dnf install -y anaconda-live
+	# okay
+	dnf install -y firefox
     HIDE_SPOKE="1"
 else
     dnf install -y anaconda-live libblockdev-{btrfs,lvm,dm}
