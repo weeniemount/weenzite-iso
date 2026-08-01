@@ -23,3 +23,7 @@ uk.org.greenend.chiark.sgtatham.puzzles
 com.obsproject.Studio
 com.github.huluti.Coulr
 dev.project516.titledgames.microwave-man
+page.tesk.Refine
+net.nokyan.Resources
+com.mattjakeman.ExtensionManager
+app.devsuite.Ptyxis
