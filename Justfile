@@ -282,9 +282,9 @@ rootfs-include-firefox:
     {{ chroot_function }}
     set -euo pipefail
     CMD='set -xeuo pipefail
-    dnf=\"$({ which dnf5 || which dnf; } 2>/dev/null)\"
+    dnf="$({ which dnf5 || which dnf; } 2>/dev/null)"
     $dnf install -y firefox'
-    chroot \"$CMD\"
+    chroot "$CMD"
 
 # Compress rootfs into a compressed image
 squash fs_type="squashfs":
