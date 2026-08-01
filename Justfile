@@ -265,7 +265,7 @@ rootfs-selinux-fix image=default_image:
     CMD='set -xeuo pipefail
     cd /app/{{ rootfs }}
     setfiles -F -r . /etc/selinux/targeted/contexts/files/file_contexts .
-    chcon --user=system_u --recursive .'
+    chcon --user=system_u --recursive . || true'
     {{ PODMAN }} run --rm -it \
         --volume {{ git_root }}:/app \
         --workdir "/app" \
@@ -274,6 +274,17 @@ rootfs-selinux-fix image=default_image:
         {{ image }} \
         /usr/bin/bash -c "$CMD"
     rmdir {{ rootfs }}/app || true
+
+# anaconda slop ui
+rootfs-include-firefox:
+    #!/usr/bin/env bash
+    {{ _ci_grouping }}
+    {{ chroot_function }}
+    set -euo pipefail
+    CMD='set -xeuo pipefail
+    dnf=\"$({ which dnf5 || which dnf; } 2>/dev/null)\"
+    $dnf install -y firefox'
+    chroot \"$CMD\"
 
 # Compress rootfs into a compressed image
 squash fs_type="squashfs":
@@ -427,6 +438,7 @@ iso:
     (rootfs-include-flatpaks flatpaks_file) \
     (rootfs-include-polkit polkit) \
     (rootfs-install-livesys-scripts livesys) \
+    rootfs-include-firefox \
     (rootfs-include-container container_image image) \
     (hook-post-rootfs HOOK_post_rootfs) \
     rootfs-clean-sysroot \
