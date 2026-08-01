@@ -286,6 +286,15 @@ rootfs-include-firefox:
     $dnf install -y firefox'
     chroot "$CMD"
 
+rootfs-fix-webui-browser:
+    #!/usr/bin/env bash
+    {{ _ci_grouping }}
+    {{ chroot_function }}
+    set -euo pipefail
+    CMD='set -xeuo pipefail
+    sed -i "s/^DEFAULT_BROWSER_CMD=.*/DEFAULT_BROWSER_CMD=firefox/" /usr/libexec/anaconda/webui-desktop'
+    chroot "$CMD"
+
 # Compress rootfs into a compressed image
 squash fs_type="squashfs":
     #!/usr/bin/env bash
@@ -441,6 +450,7 @@ iso:
     rootfs-include-firefox \
     (rootfs-include-container container_image image) \
     (hook-post-rootfs HOOK_post_rootfs) \
+    rootfs-fix-webui-browser \
     rootfs-clean-sysroot \
     (rootfs-selinux-fix image) \
     (ci-delete-image image) \
