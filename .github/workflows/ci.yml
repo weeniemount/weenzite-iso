@@ -29,7 +29,7 @@ jobs:
         uses: ./
         with:
           livesys: "true"
-          flatpaks-list: ./src/flatpaks.example.txt
+          flatpaks-list: ./src/flatpaks-weenzite.txt
           # FIXED: Use the same image for both parameters
           container-image: ${{ matrix.image }}
           image-ref: ${{ matrix.image }}
