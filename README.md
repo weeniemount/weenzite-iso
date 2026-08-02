@@ -1,4 +1,3 @@
-# weenOS iso builder
-previously known as google balls os
+# weenzite-iso
 
-this is a fork of ublue-os/titanoboa which is custom fitted for the weenOS's bootc image and with all the built in apps for the true weenOS experience
+this is a fork of an older version of ublue-os/titanoboa since i prefer the old version over the new one. currently only builds weenzite as an iso and its flatpaks
