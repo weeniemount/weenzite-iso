@@ -292,7 +292,8 @@ rootfs-fix-webui-browser:
     {{ chroot_function }}
     set -euo pipefail
     CMD='set -xeuo pipefail
-    sed -i "s/^DEFAULT_BROWSER_CMD=.*/DEFAULT_BROWSER_CMD=firefox/" /usr/libexec/anaconda/webui-desktop'
+    sed -i "108s/.*/\tDEFAULT_BROWSER=\"firefox\"/" /usr/libexec/anaconda/webui-desktop
+    sed -n "108p" /usr/libexec/anaconda/webui-desktop'
     chroot "$CMD"
 
 # Compress rootfs into a compressed image
