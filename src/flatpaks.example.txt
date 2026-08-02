@@ -27,3 +27,5 @@ page.tesk.Refine
 net.nokyan.Resources
 com.mattjakeman.ExtensionManager
 app.devsuite.Ptyxis
+io.github.giantpinkrobots.varia
+org.gnome.Epiphany
